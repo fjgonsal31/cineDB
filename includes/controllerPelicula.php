@@ -1,16 +1,15 @@
 <?php
 
-session_start(); // Asegúrate de iniciar la sesión
+session_start();
 
 require 'funcionesPelicula.php';
 
 // DELETE
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['_method']) && $_POST['_method'] === 'DELETE') {
     $id = $_POST['id'];
-    // Procesar la eliminación
     echo "El ID es: " . htmlspecialchars($id);
     deletePelicula($id);
-    exit(); // Salir después de procesar la solicitud DELETE
+    exit();
 }
 
 // UPDATE
@@ -21,10 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['_method']) && $_POST[
     $id_director = $_POST['idDirector'];
 
     updatePelicula($id, $titulo, $precio, $id_director);
-    exit(); // Salir después de procesar la solicitud DELETE
+    exit();
 }
 
-// Insertar datos
+// INSERT
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (!isset($_POST['_method']) || $_POST['_method'] !== 'DELETE') {
         $titulo = $_POST['titulo'];

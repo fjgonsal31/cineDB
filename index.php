@@ -47,12 +47,12 @@ session_start();
                     echo "<td>$value[id]</td>";
                     echo "<td class='edit'>$value[titulo]</td>";
                     echo "<td class='edit'>$value[precio]" . " €" . "</td>";
-                    echo "<td class='edit'>$value[nombre] $value[apellidos]</td>";
+                    echo "<td class='edit'>$value[nombre] $value[apellido]</td>";
 
                     echo "<td id='select$value[id]' class='hidden edit'><select id='directorSelect$value[id]'>";
 
                     foreach (getDirectores() as $k => $val) {
-                        echo "<option value='$val[id]'>$val[nombre] $val[apellidos]</option>";
+                        echo "<option value='$val[id]'>$val[nombre] $val[apellido]</option>";
                     }
 
                     echo "</select></td>";

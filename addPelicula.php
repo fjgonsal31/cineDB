@@ -32,7 +32,7 @@
                  <?php
 
                     foreach (getDirectores() as $key => $value) {
-                        echo "<option value='$value[id]'>$value[nombre] $value[apellidos]</option>";
+                        echo "<option value='$value[id]'>$value[nombre] $value[apellido]</option>";
                     }
 
                     ?>

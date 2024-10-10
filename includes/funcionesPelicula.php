@@ -4,7 +4,7 @@ function getPeliculas()
 {
     require 'connectionDB.php';
 
-    $sql = "SELECT p.id, p.titulo, p.precio, d.nombre, d.apellidos, p.id_director FROM pelicula p JOIN director d ON p.id_director = d.id;";
+    $sql = "SELECT p.id, p.titulo, p.precio, d.nombre, d.apellido, p.id_director FROM pelicula p JOIN director d ON p.id_director = d.id;";
     $result = mysqli_query($conn, $sql);
 
     return $result;

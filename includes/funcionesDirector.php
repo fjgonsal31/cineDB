@@ -10,11 +10,11 @@ function getDirectores()
     return $result;
 }
 
-function insertDirector($nombre, $apellidos, $f_nacimiento, $biografia)
+function insertDirector($nombre, $apellido, $f_nacimiento, $biografia)
 {
     require 'connectionDB.php';
 
-    $sql = "INSERT INTO director(nombre, apellidos, f_nacimiento, biografia) VALUES ('$nombre', '$apellidos', '$f_nacimiento', '$biografia');";
+    $sql = "INSERT INTO director(nombre, apellido, f_nacimiento, biografia) VALUES ('$nombre', '$apellido', '$f_nacimiento', '$biografia');";
     $result = mysqli_query($conn, $sql);
 
     return $result;
@@ -30,11 +30,11 @@ function deleteDirector($id)
     return $result;
 }
 
-function updateDirector($nombre, $apellidos, $f_nacimiento, $biografia)
+function updateDirector($nombre, $apellido, $f_nacimiento, $biografia)
 {
     require 'connectionDB.php';
 
-    $sql = "UPDATE director SET nombre = $nombre, apellidos = $apellidos, f_nacimiento = $f_nacimiento, biografia = $biografia  WHERE id = $id;";
+    $sql = "UPDATE director SET nombre = $nombre, apellido = $apellido, f_nacimiento = $f_nacimiento, biografia = $biografia  WHERE id = $id;";
     $result = mysqli_query($conn, $sql);
 
     return $result;
